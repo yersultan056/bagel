@@ -14,14 +14,15 @@ class Level:
         self.create_map()
 
     def create_map(self):
-        for row_index, row in enumerate(WORLD_MAP):
-            for col_index, col in enumerate(row):
-                x = col_index * TILESIZE
-                y = row_index * TILESIZE
-                if col == 'x':
-                    Tile((x, y), [self.visible_sprites, self.obstracle_sprites])
-                if col == 'p':
-                    self.player = Player((x, y), [self.visible_sprites], self.obstracle_sprites)
+        # for row_index, row in enumerate(WORLD_MAP):
+        #     for col_index, col in enumerate(row):
+        #         x = col_index * TILESIZE
+        #         y = row_index * TILESIZE
+        #         if col == 'x':
+        #             Tile((x, y), [self.visible_sprites, self.obstracle_sprites])
+        #         if col == 'p':
+        #             self.player = Player((x, y), [self.visible_sprites], self.obstracle_sprites)
+        self.player = Player((2400, 1300), [self.visible_sprites], self.obstracle_sprites)
 
     def run(self):
         self.visible_sprites.custom_draw(self.player)
